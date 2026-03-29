@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор идей для СММ — банная ниша</title>
+    <meta
+      name="description"
+      content="Простой генератор идей тем и рубрик для СММ в банной нише: посты, сторис, рилс, прогревы, офферы."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">Б</div>
+          <div class="brandText">
+            <h1>Генератор идей для СММ</h1>
+            <p>Банная ниша: баня, сауна, парение, SPA, аренда</p>
+          </div>
+        </div>
+        <div class="headerActions">
+          <button id="copyLastBtn" class="btn btnGhost" type="button" disabled>
+            Копировать последнюю
+          </button>
+          <button id="clearFavBtn" class="btn btnGhost" type="button">
+            Очистить избранное
+          </button>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <h2>Фильтры</h2>
+          <div class="controls">
+            <label class="field">
+              <span class="label">Цель</span>
+              <select id="goal">
+                <option value="any" selected>Любая</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Формат</span>
+              <select id="format">
+                <option value="any" selected>Любой</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Сезон/повод</span>
+              <select id="season">
+                <option value="any" selected>Любой</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Тон</span>
+              <select id="tone">
+                <option value="any" selected>Любой</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Уровень аудитории</span>
+              <select id="level">
+                <option value="any" selected>Любой</option>
+              </select>
+            </label>
+
+            <div class="row">
+              <button id="generateBtn" class="btn btnPrimary" type="button">
+                Сгенерировать идею
+              </button>
+              <button id="surpriseBtn" class="btn" type="button">
+                Сюрприз‑режим
+              </button>
+            </div>
+
+            <details class="hint">
+              <summary>Подсказка по использованию</summary>
+              <ul>
+                <li>Выберите цель/формат, нажмите “Сгенерировать”.</li>
+                <li>Кнопка “Сюрприз‑режим” чаще миксует необычные углы.</li>
+                <li>Добавляйте удачные идеи в избранное и копируйте в буфер.</li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Результат</h2>
+          <div class="result" id="result" aria-live="polite">
+            <div class="resultEmpty">
+              Нажмите “Сгенерировать идею”, чтобы получить тему.
+            </div>
+          </div>
+
+          <div class="resultActions">
+            <button id="copyBtn" class="btn" type="button" disabled>
+              Копировать
+            </button>
+            <button id="favBtn" class="btn" type="button" disabled>
+              В избранное
+            </button>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="cardHeader">
+            <h2>Избранное</h2>
+            <div class="pill" id="favCount">0</div>
+          </div>
+          <div id="favorites" class="favorites">
+            <div class="muted">Пока пусто. Добавьте идеи кнопкой “В избранное”.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="muted">
+          Работает офлайн. Данные избранного хранятся в вашем браузере.
+        </div>
+        <div class="muted">
+          Совет: подставляйте ваш город/цены/времена сеансов и добавляйте call‑to‑action.
+        </div>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
